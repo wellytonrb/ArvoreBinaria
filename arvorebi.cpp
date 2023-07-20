@@ -102,3 +102,46 @@ int main() {
 Neste exemplo, a estrutura Node é a mesma que usamos antes. Os métodos insertNode, inorderTraversal, preorderTraversal e postorderTraversal são implementados de forma recursiva para inserir nós na árvore e percorrer a árvore em ordem, pré-ordem e pós-ordem, respectivamente. A função treeDepth calcula a profundidade da árvore recursivamente.
 
 Espero que isso ajude! Se tiver mais perguntas, fique à vontade para fazer.
+
+--------------------------------------------------
+
+struct  BinaryTreeNode
+{
+    string dado;
+    BinaryTreeNode;
+};
+
+struct NaryTreeNode{
+    string dado;
+    vector<NaryTreeNode*> filhos;
+};
+
+//percurso();
+//pré ordem; faça algo no nó, vá pro nó a esquerda() 2x e dps vá pro nó a direita()
+
+
+void preOrdem(BinaryTreeNode* tree) {
+    if (tree == nullptr) {
+        return;
+    }
+    cout << tree->dado << " ";
+    preOrdem(tree->esquerda);
+    preOrdem(tree->direita);
+}
+
+
+void posOrdem(BinaryTreeNode* tree) {
+    if (tree == nullptr) {
+        return;
+    }
+    preOrdem(tree->esquerda);
+    preOrdem(tree->direita);
+    cout << tree->dado << " ";
+}
+
+//criar uma árvore binária;
+//implementar métodos: in order, pre order e pos order (recursivos);
+//metodo parar inserir o nó;
+//metodo pra verificar profundidade da árvore;
+
+// sempre iniciar o nó pela esquerda
