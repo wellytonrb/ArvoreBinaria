@@ -9,6 +9,6 @@ Implementar uma árvore binária com os métodos recursivos para
 -Retornar profundidade da árvore
 
 
-g++ .\AtividadeArvore.cpp -o arvorex
+	g++ .\AtividadeArvore.cpp -o arvorex
 
-.\arvorex
+	.\arvorex
