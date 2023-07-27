@@ -1,6 +1,6 @@
-Claro! Aqui está uma implementação em C++ de uma árvore binária com métodos recursivos para incluir nós na árvore, percorrer a árvore em ordem (in order), pré-ordem (pre order) e pós-ordem (post order), e retornar a profundidade da árvore:
-
 #include <iostream>
+using namespace std;
+#define COUNT 10
 
 struct Node {
     int data;
@@ -14,14 +14,20 @@ struct Node {
     }
 };
 
-// Função para incluir um nó na árvore
-Node* insertNode(Node* root, int value) {
+// insere nó na arvore
+Node* insertNode(Node* root, int value)
+{
+    // verifica se a arvore vazia
     if (root == nullptr) {
         return new Node(value);
-    } else {
-        if (value <= root->data) {
+    }
+    else
+    {
+        if (value <= root->data)
+        {
             root->left = insertNode(root->left, value);
-        } else {
+        } else
+        {
             root->right = insertNode(root->right, value);
         }
         return root;
@@ -29,28 +35,28 @@ Node* insertNode(Node* root, int value) {
 }
 
 // Percorrer a árvore em ordem (in order)
-void inorderTraversal(Node* root) {
+void InOrder(Node* root) {
     if (root != nullptr) {
-        inorderTraversal(root->left);
+        InOrder(root->left);
         std::cout << root->data << " ";
-        inorderTraversal(root->right);
+        InOrder(root->right);
     }
 }
 
 // Percorrer a árvore em pré-ordem (pre order)
-void preorderTraversal(Node* root) {
+void PreOrder(Node* root) {
     if (root != nullptr) {
         std::cout << root->data << " ";
-        preorderTraversal(root->left);
-        preorderTraversal(root->right);
+        PreOrder(root->left);
+        PreOrder(root->right);
     }
 }
 
 // Percorrer a árvore em pós-ordem (post order)
-void postorderTraversal(Node* root) {
+void PostOrder(Node* root) {
     if (root != nullptr) {
-        postorderTraversal(root->left);
-        postorderTraversal(root->right);
+        PostOrder(root->left);
+        PostOrder(root->right);
         std::cout << root->data << " ";
     }
 }
@@ -66,7 +72,8 @@ int treeDepth(Node* root) {
     }
 }
 
-int main() {
+int main()
+{
     Node* root = nullptr;
 
     // Incluir nós na árvore
@@ -78,70 +85,24 @@ int main() {
     root = insertNode(root, 60);
     root = insertNode(root, 80);
 
+    // Retornar a profundidade da árvore
+    int depth = treeDepth(root);
+    std::cout << "Tree depth: " << depth << std::endl;
+
     // Percorrer a árvore em ordem
-    std::cout << "Árvore em ordem: ";
-    inorderTraversal(root);
+    std::cout << "Tree in order: ";
+    InOrder(root);
     std::cout << std::endl;
 
     // Percorrer a árvore em pré-ordem
-    std::cout << "Árvore em pré-ordem: ";
-    preorderTraversal(root);
+    std::cout << "Preorder tree: ";
+    PreOrder(root);
     std::cout << std::endl;
 
     // Percorrer a árvore em pós-ordem
-    std::cout << "Árvore em pós-ordem: ";
-    postorderTraversal(root);
+    std::cout << "Post-order tree: ";
+    PostOrder(root);
     std::cout << std::endl;
-
-    // Retornar a profundidade da árvore
-    int depth = treeDepth(root);
-    std::cout << "Profundidade da árvore: " << depth << std::endl;
 
     return 0;
 }
-Neste exemplo, a estrutura Node é a mesma que usamos antes. Os métodos insertNode, inorderTraversal, preorderTraversal e postorderTraversal são implementados de forma recursiva para inserir nós na árvore e percorrer a árvore em ordem, pré-ordem e pós-ordem, respectivamente. A função treeDepth calcula a profundidade da árvore recursivamente.
-
-Espero que isso ajude! Se tiver mais perguntas, fique à vontade para fazer.
-
---------------------------------------------------
-
-struct  BinaryTreeNode
-{
-    string dado;
-    BinaryTreeNode;
-};
-
-struct NaryTreeNode{
-    string dado;
-    vector<NaryTreeNode*> filhos;
-};
-
-//percurso();
-//pré ordem; faça algo no nó, vá pro nó a esquerda() 2x e dps vá pro nó a direita()
-
-
-void preOrdem(BinaryTreeNode* tree) {
-    if (tree == nullptr) {
-        return;
-    }
-    cout << tree->dado << " ";
-    preOrdem(tree->esquerda);
-    preOrdem(tree->direita);
-}
-
-
-void posOrdem(BinaryTreeNode* tree) {
-    if (tree == nullptr) {
-        return;
-    }
-    preOrdem(tree->esquerda);
-    preOrdem(tree->direita);
-    cout << tree->dado << " ";
-}
-
-//criar uma árvore binária;
-//implementar métodos: in order, pre order e pos order (recursivos);
-//metodo parar inserir o nó;
-//metodo pra verificar profundidade da árvore;
-
-// sempre iniciar o nó pela esquerda
