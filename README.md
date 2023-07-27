@@ -8,7 +8,8 @@ Implementar uma árvore binária com os métodos recursivos para
 -Percorrer árvore de forma In order, pre order e pos order
 -Retornar profundidade da árvore
 
-
+Para Compilar use:
 	g++ .\AtividadeArvore.cpp -o arvorex
-
+ 
+Para rodar usse:
 	.\arvorex
