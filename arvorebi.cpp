@@ -1,6 +1,4 @@
 #include <iostream>
-using namespace std;
-#define COUNT 10
 
 struct Node {
     int data;
