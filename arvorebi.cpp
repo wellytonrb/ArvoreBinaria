@@ -13,7 +13,7 @@ struct Node {
         right = nullptr;
     }
 };
-
+// classe node representa nós da árvore com seus valores e ponteiros para os nós filhos esquerdo e direito
 // insere nó na arvore
 Node* insertNode(Node* root, int value)
 {
@@ -71,7 +71,7 @@ int treeDepth(Node* root) {
         return std::max(leftDepth, rightDepth) + 1;
     }
 }
-
+// ex de criação de arvore 
 int main()
 {
     Node* root = nullptr;
