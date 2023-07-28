@@ -1,4 +1,9 @@
+// Wellyton Ribeiro Gomes
+
+
 #include <iostream>
+using namespace std;
+#define COUNT 10
 
 struct Node {
     int data;
@@ -32,7 +37,7 @@ Node* insertNode(Node* root, int value)
     }
 }
 
-// Percorrer a árvore em ordem (in order)
+// Percorrer a árvore em ordem (in order) diferente
 void InOrder(Node* root) {
     if (root != nullptr) {
         InOrder(root->left);
